@@ -14,6 +14,7 @@ accts=$3
 max_nodes=9
 rmnode1="ed25519_pk1yugkqlrwag93czzvp2wex4zvn8f2fucu7ga6w3au4gpjj99mxqcsek4u0q"
 rmnode2="ed25519_pk156ykp5w3dkmx9r54h4v6ttj5p2wkd4mx9hc33f5hq7xfsg9m68dq6hr67n"
+mkdir -p ${dir}/log ${dir}/etc/cert ${dir}/etc/key
 
 # the docker image should have copied in files and created a dir structure
 # if this file is missing something has gone horribly awry

@@ -3,13 +3,7 @@ LABEL MAINTAINER Kyle O <kyleo[at]0b10[dot]mx>
 LABEL description="Build or rebuild and run the IOHK Cardano rust node -- https://github.com/input-output-hk/jormungandr " 
 
 ARG BRANCH=master
-ARG NODES=1
-ARG ACCTS=1
-ARG PREFIX=/woo
 ENV ENV_BRANCH=${BRANCH}
-ENV ENV_NODES=${NODES}
-ENV ENV_ACCTS=${ACCTS}
-ENV ENV_PREFIX=${PREFIX}
 
 # install ubuntu pre-reqs
 RUN apt-get update && \
@@ -38,6 +32,13 @@ EXPOSE 4431-4439
 # export the node ports
 EXPOSE 8291-8299
 
+ARG NODES=1
+ARG ACCTS=1
+ARG PREFIX=/woo
+ENV ENV_NODES=${NODES}
+ENV ENV_ACCTS=${ACCTS}
+ENV ENV_PREFIX=${PREFIX}
+
 # add create_network.sh -- creates keys and genesis
 COPY scripts/create_network.sh ${ENV_PREFIX}/bin/
 COPY scripts/start_network.sh ${ENV_PREFIX}/bin/
@@ -48,5 +49,4 @@ RUN /bin/bash ${ENV_PREFIX}/bin/create_network.sh ${ENV_PREFIX} ${ENV_NODES} ${E
 
 
 ENTRYPOINT /bin/bash ${ENV_PREFIX}/bin/start_network.sh ${ENV_PREFIX}
-CMD ["/bin/bash", "/woo/bin/start_network.sh", "/woo"]
-#CMD ["sleep", "infinity"]
+#CMD ["/bin/bash", "/woo/bin/start_network.sh", "/woo"]
