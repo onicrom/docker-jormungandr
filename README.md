@@ -66,3 +66,8 @@ This script does the following:
 ### start_network.sh
 
 This script is the ENTRYPOINT for the container.  It runs a for loop, starting each of the requested nodes in the background, sending logs to stdout
+
+Help support the [Lovelace Community Pool](https://lovelace.community) - a no fee staking pool run by and for the community
+
+If this was useful and you can/want to support us, our ADA donation address is:
+Ae2tdPwUPEYw3rz8KGHbnTusd9QWQ8ePhogEWkm1agugTtW51skA59DrKe8 
