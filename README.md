@@ -1,6 +1,6 @@
 # docker-jormungandr
 
-Dockerfile and some scripts to build a container to run a one or multiple jormungandr (https://github.com/input-output-hk/jormungandr) node cluster
+Dockerfile and some scripts to build a container to run a one or multiple jormungandr (https://github.com/input-output-hk/jormungandr) node cluster.
 
 ## Instructions
 
@@ -20,7 +20,7 @@ docker run --name woo a-fun-name:0.1
 
 ## Options
 
-The default build options are
+The default build options are:
 - jormungandr branch: master
 - number of nodes: 1
 - number of pre-funded wallets: 1
@@ -30,5 +30,30 @@ These can be overridden during the docker build process:
 docker build -t a-fun-name:0.1 \
   --build-arg NODES=3 \
   --build-arg ACCTS=3 \
-  --build-arg BRANCH=aweseom-new-branch .
+  --build-arg BRANCH=awesome-new-branch .
   ```
+
+## What's going on under the hood?
+
+A couple template files are pushed into the container so that we can easily build the configuration files needed to start the jormungandr node(s)
+
+A couple of scripts are pushed into the container
+- create_network.sh
+- start_network.sh
+
+### create_network.sh
+
+This script does the following:
+- creates the requested ($NODES at build) number of node public and private keys
+- creates the node_secret.yaml file using one of the template files
+- creates the requested ($ACCTS at build) number of accounts (pub/prv keys etc..) to be pre-funded in the genesis block
+- generates a genesis yaml config file template
+  - removes canned *consensus_leader_ids* pub keys from the config
+  - adds the requested number of node pub keys to the *consensus_leader_ids* array
+  - adds the the requested number of addresses to the *initial_finds* array
+- creates the genesis block
+
+
+### start_network.sh
+
+This script is the ENTRYPOINT for the container.  It runs a for loop, starting each of the requested nodes in the background, sending logs to stdout
