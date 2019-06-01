@@ -2,6 +2,11 @@
 
 Dockerfile and some scripts to build a container to run a one or multiple jormungandr (https://github.com/input-output-hk/jormungandr) node cluster.
 
+DISCLAIMER:
+FYI This is alpha code (jormungandr) and NOT ready for an actual public testnet.  
+Please don't consider this as any official announcement/post.  
+I'm just some keyboard cowboy community member who got bored one night.  
+
 ## Instructions
 
 How to build
@@ -35,12 +40,12 @@ docker build -t a-fun-name:0.1 \
 
 ## What's going on under the hood?
 
-A couple template files are pushed into the container so that we can easily build the configuration files needed to start the jormungandr node(s)
+A couple template files are pushed into the container to build configuration files:
 - config_node1.yaml: generic single node config
 - template_config_node.yaml: a template node config for any other nodes
 - template_secret.yaml: a template secrets file
 
-A couple of scripts are pushed into the container
+A couple of scripts are pushed into the container:
 - create_network.sh
 - start_network.sh
 
