@@ -1,0 +1,12 @@
+logger:
+  verbosity: 3
+  format: json
+rest:
+  listen: "127.0.0.1:4431"
+  prefix: "api"
+peer_2_peer:
+  public_id: 1111111111111111
+  public_address: "/ip4/127.0.0.1/tcp/8291"
+  topics_of_interests:
+    messages: high
+    blocks: high

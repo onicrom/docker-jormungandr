@@ -1,0 +1,15 @@
+logger:
+  verbosity: 3
+  format: json
+rest:
+  listen: "127.0.0.1:443xNODEIDx"
+  prefix: "api"
+peer_2_peer:
+  public_id: 111111111111111xNODEIDx
+  trusted_peers:
+    - id: 1111111111111111
+      address: "/ip4/127.0.0.1/tcp/8291"
+  public_address: "/ip4/127.0.0.1/tcp/829xNODEIDx"
+  topics_of_interests:
+    messages: high
+    blocks: high
