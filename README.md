@@ -1,6 +1,6 @@
 # docker-jormungandr
 
-Dockerfile and some scripts to build a container to run a one or multiple jormungandr (https://github.com/input-output-hk/jormungandr) node cluster.
+Dockerfile and some scripts to build a container to run a one or multiple jormungandr praos (https://github.com/input-output-hk/jormungandr) node cluster.
 
 DISCLAIMER:
 FYI This is alpha code (jormungandr) and NOT ready for an actual public testnet.  
