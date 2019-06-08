@@ -30,7 +30,7 @@ The default build options are:
 
 These can be overridden during the docker build process:
 ```bash
-docker build -t a-fun-name:0.1 \
+docker build -t a-fun-name:0.2 \
   --build-arg MODE=bft \
   --build-arg NODES=3 \
   --build-arg ACCTS=3 \
