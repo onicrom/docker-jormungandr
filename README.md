@@ -23,6 +23,7 @@ docker build -t a-fun-name:0.1 .
 #### Options
 
 The default build options are:
+- directory: /woo
 - mode: bft (supports bft or praos)
 - jormungandr branch: master
 - number of nodes: 1
@@ -31,6 +32,7 @@ The default build options are:
 These can be overridden during the docker build process:
 ```bash
 docker build -t a-fun-name:0.2 \
+  --build-arg PREFIX=/notwoo \
   --build-arg MODE=praos \
   --build-arg NODES=3 \
   --build-arg ACCTS=3 \
@@ -56,7 +58,16 @@ EXPOSE 8443
 ## Limitations
 
 - bft mode is limited to 9 nodes because I didn't want to test more
+- bft mode is configured to store data in memory, not on disk -- restarting the container erases blockchain history
 - praos mode is limited to 1 node because I have not tested running multiple nodes yet
+
+To enable persistence in bft mode, edit [config_node1.yaml](https://github.com/onicrom/docker-jormungandr/blob/master/templates/config_node1.yaml)
+
+add a new line:
+
+```storage: "/woo/data"```
+
+(/woo is the default path if you have changed this via --build-arg PREFIX=/notwoo you will need to adjust the example)
 
 ## What's going on under the hood?
 

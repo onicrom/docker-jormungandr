@@ -20,7 +20,7 @@ RUN curl https://sh.rustup.rs -sSf | bash -s -- -y && \
     /bin/bash -c "source $HOME/.cargo/env;rustup install stable;rustup default stable"
 
 # create some dirs
-RUN mkdir -p ${ENV_PREFIX}/src ${ENV_PREFIX}/bin ${ENV_PREFIX}/log ${ENV_PREFIX}/etc/cert ${ENV_PREFIX}/etc/key
+RUN mkdir -p ${ENV_PREFIX}/src ${ENV_PREFIX}/bin ${ENV_PREFIX}/log ${ENV_PREFIX}/etc/cert ${ENV_PREFIX}/etc/key ${ENV_PREFIX}/data
 
 # build jormungandr
 RUN cd ${ENV_PREFIX}/src && \
