@@ -1,11 +1,11 @@
 # docker-jormungandr
 
+Dockerfile and some scripts to create a container, compile/install [jormungandr](https://github.com/input-output-hk/jormungandr), and run one or multiple node(s).
+
 ## Disclaimer:
 FYI This is alpha code (jormungandr) and NOT ready for an actual public testnet.  
 Please don't consider this as any official announcement/post.  
 I'm just some keyboard cowboy community member who got bored one night.  
-
-Dockerfile and some scripts to build a container to run a one or multiple [jormungandr](https://github.com/input-output-hk/jormungandr) node(s).
 
 
 ## Instructions
