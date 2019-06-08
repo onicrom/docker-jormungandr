@@ -12,7 +12,7 @@ I'm just some keyboard cowboy community member who got bored one night.
 
 ### How to build
 
-The build process creates all the artifacts required to run the node.  If you want to change parameters of the network; praos to bft, bft nodes from 1 to 3, you will need to re-build the container.
+The build process creates all the artifacts required to run the node.  If you want to change parameters of the network; bft to praos, bft nodes from 1 to 3, you will need to re-build the container.
 
 ```bash
 git clone https://github.com/onicrom/docker-jormungandr.git
