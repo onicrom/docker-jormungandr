@@ -23,7 +23,7 @@ docker build -t a-fun-name:0.1 .
 #### Options
 
 The default build options are:
-- mode: praos (supports bft or praos)
+- mode: bft (supports bft or praos)
 - jormungandr branch: master
 - number of nodes: 1
 - number of pre-funded wallets: 1
@@ -31,7 +31,7 @@ The default build options are:
 These can be overridden during the docker build process:
 ```bash
 docker build -t a-fun-name:0.2 \
-  --build-arg MODE=bft \
+  --build-arg MODE=praos \
   --build-arg NODES=3 \
   --build-arg ACCTS=3 \
   --build-arg BRANCH=awesome-new-branch .
