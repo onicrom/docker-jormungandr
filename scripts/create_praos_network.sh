@@ -16,10 +16,10 @@ else
 fi
 
 # make sure the script to create all the things exists
-[ ! -f ${dir}/src/jormungandr/scripts/stakepool-single-node-test ] && echo "[ERROR] - fancy iohk script missing, are you using the correct git branch?" && exit 1
+[ ! -f ${dir}/src/jormungandr/scripts/bootstrap ] && echo "[ERROR] - fancy iohk script missing, are you using the correct git branch?" && exit 1
 
 cd ${dir}/etc
-/bin/bash ${dir}/src/jormungandr/scripts/stakepool-single-node-test
+/bin/bash ${dir}/src/jormungandr/scripts/bootstrap
 
 # small hacks to support the stuff required in start_network.sh
 # i will fix this later...lol riiiiiiight

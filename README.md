@@ -98,7 +98,7 @@ This script does the following:
 ### create_praos_networks.sh
 
 This script creates the node, account, certs, genesis, and block0 files by executing the helper script provided by the jormungandr repo -- 
-[stakepool-single-node-test](https://github.com/input-output-hk/jormungandr/blob/master/scripts/stakepool-single-node-test)
+[bootstrap](https://github.com/input-output-hk/jormungandr/blob/master/scripts/bootstrap
 
 ### start_network.sh
 
