@@ -2,6 +2,5 @@
 "name": "LovelaceCommunityPool",
 "description": "No fee, community supported staking pool -- No joke, 100% free (as in beer).",
 "ticker": "LCP",
-"homepage": "https://lovelace.community",
-"verify": "058c4fcbdbcba42401"
+"homepage": "https://lovelace.community"
 }
